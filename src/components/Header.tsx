@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     { name: 'Categories', href: '#categories' },
     { name: 'Best Of', href: '#best-of' },
     { name: 'Guides', href: '#guides' },
+    { name: 'Revolution', href: '/revolution', special: true },
   ];
 
   return (
@@ -37,7 +38,11 @@ const Header: React.FC = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  item.special 
+                    ? 'text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 bg-purple-50 dark:bg-purple-900/20' 
+                    : 'text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400'
+                }`}
               >
                 {item.name}
               </a>
@@ -125,7 +130,11 @@ const Header: React.FC = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md text-sm font-medium transition-colors duration-200"
+                  className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    item.special 
+                      ? 'text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 bg-purple-50 dark:bg-purple-900/20' 
+                      : 'text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                  }`}
                 >
                   {item.name}
                 </a>
