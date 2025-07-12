@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import { 
   Zap, Brain, TrendingUp, Target, Sparkles, 
   BarChart3, Users, DollarSign, Heart, 
-  Atom, Lightbulb, Star, ChevronRight 
+  Atom, Lightbulb, Star, ChevronRight, 
+  Activity, Settings, FileText, Monitor
 } from 'lucide-react';
 import { useRevolutionStore, useRevolutionaryAI, useQuantumAnalytics, useEmotionalIntelligence } from '../../store/revolutionStore';
+import NotificationSystem from './NotificationSystem';
+import AdvancedReporting from './AdvancedReporting';
+import PerformanceMonitor from './PerformanceMonitor';
+import SmartCampaignManager from './SmartCampaignManager';
 
 const RevolutionaryDashboard: React.FC = () => {
   const { 
@@ -29,6 +34,14 @@ const RevolutionaryDashboard: React.FC = () => {
   const { emotionalMetrics: eMetrics } = useEmotionalIntelligence();
   
   const [activeTab, setActiveTab] = useState('overview');
+  
+  const navigationTabs = [
+    { id: 'overview', name: 'Overview', icon: <BarChart3 className="h-4 w-4" /> },
+    { id: 'campaigns', name: 'Campaigns', icon: <Target className="h-4 w-4" /> },
+    { id: 'reports', name: 'Reports', icon: <FileText className="h-4 w-4" /> },
+    { id: 'performance', name: 'Performance', icon: <Monitor className="h-4 w-4" /> },
+    { id: 'settings', name: 'Settings', icon: <Settings className="h-4 w-4" /> }
+  ];
   const [realTimeData, setRealTimeData] = useState({
     revenue: 0,
     conversions: 0,
@@ -240,6 +253,7 @@ const RevolutionaryDashboard: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <NotificationSystem />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -263,10 +277,37 @@ const RevolutionaryDashboard: React.FC = () => {
         </div>
       </motion.div>
 
+      {/* Navigation Tabs */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex space-x-8">
+            {navigationTabs.map((tab) => (
+              <motion.button
+                key={tab.id}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setActiveTab(tab.id)}
+                className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
+                  activeTab === tab.id
+                    ? 'border-purple-500 text-purple-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                {tab.icon}
+                <span>{tab.name}</span>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Real-time Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+        {/* Conditional Content Based on Active Tab */}
+        {activeTab === 'overview' && (
+          <>
+            {/* Real-time Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <MetricCard
             title="Revenue"
             value={`$${realTimeData.revenue.toLocaleString()}`}
@@ -403,6 +444,71 @@ const RevolutionaryDashboard: React.FC = () => {
             </div>
           </motion.div>
         </div>
+          </>
+        )}
+
+        {/* Campaigns Tab */}
+        {activeTab === 'campaigns' && (
+          <SmartCampaignManager />
+        )}
+
+        {/* Reports Tab */}
+        {activeTab === 'reports' && (
+          <AdvancedReporting />
+        )}
+
+        {/* Performance Tab */}
+        {activeTab === 'performance' && (
+          <PerformanceMonitor />
+        )}
+
+        {/* Settings Tab */}
+        {activeTab === 'settings' && (
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Settings</h3>
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    AI Processing Mode
+                  </label>
+                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option>Revolutionary Mode</option>
+                    <option>Standard Mode</option>
+                    <option>Eco Mode</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Quantum Computing Level
+                  </label>
+                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option>Maximum Quantum Advantage</option>
+                    <option>Optimized Performance</option>
+                    <option>Balanced Mode</option>
+                  </select>
+                </div>
+              </div>
+              <div className="border-t border-gray-200 pt-6">
+                <h4 className="text-md font-medium text-gray-900 mb-4">Emotional Intelligence Settings</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-700">Happiness Optimization</span>
+                    <input type="checkbox" defaultChecked className="rounded text-purple-600 focus:ring-purple-500" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-700">Empathy Analysis</span>
+                    <input type="checkbox" defaultChecked className="rounded text-purple-600 focus:ring-purple-500" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-700">Trust Building</span>
+                    <input type="checkbox" defaultChecked className="rounded text-purple-600 focus:ring-purple-500" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
