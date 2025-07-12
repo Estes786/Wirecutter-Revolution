@@ -8,6 +8,7 @@ import TrustSection from './components/TrustSection';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import EnhancedAdminDashboard from './components/EnhancedAdminDashboard'; // Import baru
+import RevolutionaryDashboard from './components/Revolutionary/RevolutionaryDashboard'; // Revolutionary dashboard
 import { usePWA } from './hooks/usePWA';
 
 const HomePage: React.FC = () => {
@@ -54,6 +55,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<EnhancedAdminDashboard />} /> {/* Route baru */}
+        <Route path="/revolution" element={<RevolutionaryDashboard />} /> {/* Revolutionary dashboard */}
       </Routes>
     </Router>
   );
