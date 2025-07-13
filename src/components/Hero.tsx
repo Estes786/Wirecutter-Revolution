@@ -97,13 +97,21 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Premium Background with Enhanced Gradients */}
+      {/* Ultra Premium Background Effects */}
+      <div className="ultra-premium-background-effects"></div>
+      
+      {/* Enhanced Premium Background with Gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-luxury-900 via-luxury-800 to-luxury-900">
         <div className="absolute inset-0 bg-gradient-to-r from-accent-900/20 via-primary-900/20 to-secondary-900/20" />
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a855f7' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
       </div>
+
+      {/* Ultra Premium Floating AI Elements */}
+      <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full opacity-10 bg-gradient-to-br from-blue-400 to-purple-500 blur-xl animate-float"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full opacity-10 bg-gradient-to-br from-purple-400 to-pink-500 blur-xl animate-float animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/6 w-20 h-20 rounded-full opacity-15 bg-gradient-to-br from-cyan-400 to-blue-500 blur-lg animate-float animation-delay-4000"></div>
 
       {/* Animated Luxury Blobs */}
       <div className="absolute top-0 -left-4 w-96 h-96 bg-gradient-to-r from-accent-600/30 to-primary-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
