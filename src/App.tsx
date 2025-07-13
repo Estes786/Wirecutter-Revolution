@@ -5,11 +5,12 @@ import Hero from './components/Hero';
 import Categories from './components/Categories';
 import FeaturedReviews from './components/FeaturedReviews';
 import TrustSection from './components/TrustSection';
-import ProductPlacementZones from './components/ProductPlacementZones'; // New component
+import ProductPlacementZones from './components/ProductPlacementZones';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import EnhancedAdminDashboard from './components/EnhancedAdminDashboard';
 import RevolutionaryDashboard from './components/Revolutionary/RevolutionaryDashboard';
+import UltraPremiumAdminDashboard from './components/UltraPremiumAdminDashboard'; // New import
 import { usePWA } from './hooks/usePWA';
 
 const HomePage: React.FC = () => {
@@ -19,7 +20,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <Categories />
       <FeaturedReviews />
-      <ProductPlacementZones /> {/* Integrated new component */}
+      <ProductPlacementZones />
       <TrustSection />
       <Newsletter />
       <Footer />
@@ -56,8 +57,9 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<EnhancedAdminDashboard />} /> {/* Route baru */}
-        <Route path="/revolution" element={<RevolutionaryDashboard />} /> {/* Revolutionary dashboard */}
+        <Route path="/admin" element={<EnhancedAdminDashboard />} />
+        <Route path="/ultra-premium" element={<UltraPremiumAdminDashboard />} /> {/* New ultra premium route */}
+        <Route path="/revolution" element={<RevolutionaryDashboard />} />
       </Routes>
     </Router>
   );
