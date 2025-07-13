@@ -5,19 +5,21 @@ import Hero from './components/Hero';
 import Categories from './components/Categories';
 import FeaturedReviews from './components/FeaturedReviews';
 import TrustSection from './components/TrustSection';
+import ProductPlacementZones from './components/ProductPlacementZones'; // New component
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
-import EnhancedAdminDashboard from './components/EnhancedAdminDashboard'; // Import baru
-import RevolutionaryDashboard from './components/Revolutionary/RevolutionaryDashboard'; // Revolutionary dashboard
+import EnhancedAdminDashboard from './components/EnhancedAdminDashboard';
+import RevolutionaryDashboard from './components/Revolutionary/RevolutionaryDashboard';
 import { usePWA } from './hooks/usePWA';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="ultra-premium-container min-h-screen">
       <Header />
       <Hero />
       <Categories />
       <FeaturedReviews />
+      <ProductPlacementZones /> {/* Integrated new component */}
       <TrustSection />
       <Newsletter />
       <Footer />
