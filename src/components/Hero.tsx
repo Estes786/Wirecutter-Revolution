@@ -9,32 +9,32 @@ const Hero: React.FC = () => {
 
   const heroSlides = [
     {
-      title: "AI-Powered Product Recommendations",
-      subtitle: "Discover the perfect products tailored just for you",
-      description: "Our advanced AI analyzes your preferences and behavior to recommend products you'll love",
-      cta: "Get Personalized Recommendations",
+      title: "Ultra Premium AI-Powered Reviews",
+      subtitle: "Experience the future of product discovery",
+      description: "Advanced AI algorithms analyze millions of data points to deliver personalized recommendations with quantum-precision accuracy",
+      cta: "Explore Premium Reviews",
       icon: <Sparkles className="h-8 w-8" />,
       gradient: "from-accent-600 via-primary-600 to-secondary-600",
       bgGradient: "bg-gradient-to-br from-accent-50 via-primary-50 to-secondary-50",
       iconColor: "text-accent-600"
     },
     {
-      title: "Expert Reviews You Can Trust",
-      subtitle: "In-depth analysis from Indonesian product experts",
-      description: "Every product is thoroughly tested and reviewed by our team of Indonesian experts",
-      cta: "Browse Expert Reviews",
+      title: "Revolutionary Product Intelligence",
+      subtitle: "Where expertise meets cutting-edge technology", 
+      description: "Every product is analyzed through our revolutionary AI engine, delivering insights beyond traditional reviews",
+      cta: "Discover Intelligence",
       icon: <Crown className="h-8 w-8" />,
       gradient: "from-gold-500 via-gold-600 to-gold-700",
       bgGradient: "bg-gradient-to-br from-gold-50 via-gold-100 to-gold-50",
       iconColor: "text-gold-600"
     },
     {
-      title: "Best Deals Across Indonesia",
-      subtitle: "Compare prices from Shopee, Tokopedia, Lazada & more",
-      description: "Find the best deals and never overpay with our real-time price comparison",
-      cta: "Find Best Deals",
+      title: "Quantum Analytics Platform",
+      subtitle: "Next-generation product performance tracking",
+      description: "Harness the power of quantum computing concepts to analyze product trends and market dynamics",
+      cta: "Access Analytics",
       icon: <TrendingUp className="h-8 w-8" />,
-      gradient: "from-success-500 via-success-600 to-success-700",
+      gradient: "from-success-500 via-success-600 to-success-700", 
       bgGradient: "bg-gradient-to-br from-success-50 via-success-100 to-success-50",
       iconColor: "text-success-600"
     }
